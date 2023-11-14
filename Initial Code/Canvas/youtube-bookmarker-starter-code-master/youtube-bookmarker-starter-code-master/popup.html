@@ -1,0 +1,322 @@
+<link rel="stylesheet" href="bootstrap.min.css">
+<!-- <link href="popup.css" rel="stylesheet" type="text/css" /> -->
+<link rel="stylesheet" href="popup.css">
+
+<script src="popup.js"></script>
+<script src="functions.js"></script>
+<!-- <script src="bootstrap.min.css"></script> -->
+<script src="bootstrap.bundle.min.js"></script>
+
+
+<style>
+
+  /* .highlight {
+    background-color: red;
+    color: white; 
+  } */
+
+  #gpa{
+    margin-top: 10px;
+    font-size: 13px;
+
+  }
+
+  .custom-btn {
+      padding: 2px 2px;
+      font-size: 12px;
+      margin-right: 4px;
+    }
+
+    .link-btn {
+      padding: 2px 2px;
+      font-size: 9px;
+      margin-right: 4px;
+      background-color: red;
+      border: none;
+    }
+
+  #myTable tbody tr.blue-row {
+      color: blue;
+    }
+
+  #myTable{
+    /* margin-top: -40px; */
+  }
+  #apiInput{
+    display: none;
+    /* margin-top: 10px; */
+  }
+
+  #store{
+    /* margin-top: 10px; */
+    margin-left: -10px;
+
+  }
+
+  /* tr { */
+      /* background-color: red !important */
+  /* } */
+
+  /* #myTable tbody tr:hover {
+      background-color: red !important
+    }  */
+
+  #clearAPI{
+    /* margin-top: 10px; */
+  }
+
+  #GradeContainer{
+    margin-top: 10px;
+  }
+
+  /* .container {
+  width: 900px;
+  color: #314d3e;
+} */
+
+  body {
+    min-width: 500px;
+    font-size: 10px;
+  }
+
+  #myTable{
+    font-size: 10px;
+    margin-top: -20px;
+    /* background-color: red !important; */
+    /* color: blue !important */
+
+
+  }
+
+  #myTable #hoverpls {
+      color: blue;
+    }
+  
+    .button-container {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    .button-container2{
+      display: flex;
+      margin: 10px;
+    }
+
+  #inputContainer{
+    margin-top: 10px;
+    /* border: solid; */
+    display: "none";
+  }
+
+  #dangerZoneContainer{
+    margin-top: 10px;
+  }
+
+  #apiInputContainer{
+    margin-top: 10px;
+    display: "none";
+    /* border: solid; */
+
+    /* display: inline-flexbox; */
+  }
+
+  h2{
+    margin-top: 15px;
+    font-size: 15px;
+  }
+
+  #hooover:hover{
+  /* color: red; */
+  background-color: lightgray !important
+  }
+  
+  #myTable .td{
+    color: red;
+    background-color: lightgray !important
+  }
+
+  #pls{
+    color: red;
+  }
+
+  .return{
+    margin-top: 10px;
+  }
+
+  #unauthorized{
+    color: red;
+  }
+
+  #loading{
+    color: red;
+  }
+
+  /* #pls:hover{
+    background-color: lightgray !important
+
+  } */
+
+  /* #dangerInput{
+    margin-top: 10px;
+  } */
+
+
+  
+
+  
+
+
+
+
+  /* .table {
+  font-size: 1px; 
+  }
+   */
+</style>
+
+<div class="container">
+
+  <body>
+
+    <div>
+      <!-- <div class="title">Your bookmarks for this video</div> -->
+      <!-- <button id = "test">Click Me!</button> -->
+      <!-- <input type="text" id="apiInput" autocomplete="off" required> -->
+  
+      <!-- <div class="input-group">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">@example.com</span>
+        </div>
+      </div> -->
+
+      <!-- <div class="input-group input-group-sm">
+        <input type="text" class="form-control form-control-sm" placeholder="Username" aria-label="Username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">@example.com</span>
+        </div>
+      </div> -->
+
+      <!-- <div class="input-group input-group-sm" style="height: 30px;">
+        <input type="text" class="form-control form-control-sm" placeholder="Username" aria-label="Username" aria-describedby="basic-addon2" style="height: 30px;">
+        <div class="input-group-append" style="height: 30px;">
+          <span class="input-group-text" id="basic-addon2" style="height: 30px; line-height: 1.5;">@example.com</span>
+        </div>
+      </div> -->
+
+      <h2 id = "Title">Grade Viewer</h2>
+      <h2 id = "Please">Please Input Both the Domain and the API Key</h2>
+
+      <!-- <button id = "saver">Save Data</button> -->
+      <div id="gpa"></div>
+      <div class="button-container">
+        <button type="button" class="btn custom-btn btn-outline-primary" id = "test">Update/Show Grades</button>
+        <button type="button" class="btn custom-btn btn-outline-primary" id = "clearAPI">View/Change Settings</button>
+      </div>
+
+      <div id = "inputContainer" class="input-group input-group-sm" style="height: 30px;">
+        <label for="domainInput" class="input-group-text">Domain</label>
+
+        <input id = "domainInput"  type="text" class="form-control form-control-sm" placeholder="Domain" aria-label="Username" aria-describedby="basic-addon2" style="height: 30px;">
+        <!-- <div class="input-group-append" style="height: 30px;">
+          <span class="input-group-text" id="basic-addon2" style="height: 30px; line-height: 1.5; font-size: 12px;">.instructure.com</span>
+        </div> -->
+      </div>
+
+      <div id = "apiInputContainer" class="input-group input-group-sm" style="height: 30px;">
+        <label for="apiInput" class="input-group-text">API Key</label>
+        <input id = "apiInput"  type="text" class="form-control form-control-sm" placeholder="API Key" aria-label="Username" aria-describedby="basic-addon2" style="height: 30px;">
+
+      </div>
+
+      <div id = "dangerZoneContainer" class="input-group input-group-sm" style="height: 30px;">
+        <label for="dangerInput" class="input-group-text">Danger #</label>
+
+        <input id = "dangerInput"  type="text" class="form-control form-control-sm" placeholder="Danger Number (Optional)" aria-label="Username" aria-describedby="basic-addon2" style="height: 30px;">
+
+      </div>
+
+      <!-- <div id = "apiInputContainer"></div> -->
+
+      <div class="button-container2">
+        <button type="button" class="btn custom-btn btn-outline-primary" id = "store">Submit Data</button>
+        <button type="button" class="btn custom-btn btn-outline-primary" id = "returnBack">Go Back</button>
+      </div>
+
+      <!-- <button type="button" class="btn custom-btn btn-outline-primary" id = "store"></button> -->
+
+      
+
+     
+
+      <!-- <div id = "GradeContainer"> -->
+  
+        <table class="table table-hover" id = "myTable">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">%</th>
+              <th scope="col">Grade</th>
+              <th scope="col">Weighted?</th>
+
+            </tr>
+          </thead>
+          <tbody id = "pls1">
+              <tr id = "">
+
+                <td id = ""></td>
+                <td id = ""></td>
+                <td id = ""></td>
+                <td id = ""></td>
+                <td id = ""></td>
+
+
+
+             
+              </tr>
+           
+          </tbody>
+        </table>
+
+        <h2 id = "unauthorized">Please Check Your API Key</h2>
+
+        <h2 id = "loading">Loading</h2>
+
+        <!-- <table class="table table-hover" id = "myTable">
+          <thead>
+              <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Email</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>john@example.com</td>
+              </tr>
+              <tr>
+                  <td>Mary</td>
+                  <td>Moe</td>
+                  <td>mary@example.com</td>
+              </tr>
+              <tr>
+                  <td>July</td>
+                  <td>Dooley</td>
+                  <td>july@example.com</td>
+              </tr>
+          </tbody>
+      </table> -->
+        
+        
+        
+        
+        
+  
+    </div>
+
+  </body>
+  
+</div>
